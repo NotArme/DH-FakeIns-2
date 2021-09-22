@@ -21,9 +21,25 @@ window.addEventListener("load", () => {
         updtLikeList();
     }
 
+    // Hover stuff
+
+    let srchBar = document.querySelector(".busca")
+
+    srchBar.onmouseover = (event) => {
+        srchBar.style.boxShadow = "0px 1px 3px black";
+    }
+    srchBar.onmouseout = (event) => {
+        srchBar.style.boxShadow = "0px 0px 0px";
+        console.log("a")
+    }
+
+    btnMore.style.cursor = "pointer"
 
 })
 
+
+
+//this function updates the likes array everytime a new card appears
 function updtLikeList() {
     likeDiv = document.querySelectorAll(".likes");
     likeBtn = document.querySelectorAll(".likes img");
