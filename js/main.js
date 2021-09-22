@@ -57,11 +57,11 @@ function updtLikeList() {
 function likePressed(cardn) {
     likeDiv[cardn].classList.toggle("liked")
     if (likeDiv[cardn].classList.contains("liked")) {
-        likeDiv[cardn].childNodes[1].src = "/img/red-heart.png";
+        likeDiv[cardn].childNodes[1].src = "img/red-heart.png";
         likeCount[cardn].innerText = parseInt(likeCount[cardn].innerText) + 1
     }
     else {
-        likeDiv[cardn].childNodes[1].src = "/img/icons/heart.svg";
+        likeDiv[cardn].childNodes[1].src = "img/icons/heart.svg";
         likeCount[cardn].innerText = parseInt(likeCount[cardn].innerText) - 1
     }
     
