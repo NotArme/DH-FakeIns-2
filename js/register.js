@@ -44,7 +44,7 @@ window.addEventListener("load", () => {
         if (inpUser.value.length < 4) {
             errorList.push("Digite um nome de usuário com no mínimo 4 caracteres");
         }
-        if (inpName.value.length < 1) {
+        if (inpPass.value.length < 1) {
             errorList.push("Digite sua senha");
         }
         if (inpDate.value.length < 5) {
