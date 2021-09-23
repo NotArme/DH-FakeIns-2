@@ -32,24 +32,33 @@ window.addEventListener("load", () => {
         errorList = [];
 
         // validations
-        if (!inpMail.value.includes("@")) {
+        if (!inpMail.value.includes("@") || inpMail.value.length <= 180 && inpMail.value.length >= 10) {
             errorList.push("Insira um email válido");
         }
-        if (inpName.value.length < 1) {
+        if (inpName.value.length >= 80 || inpName.value.length <= 2) {
+            console.log('a')
             errorList.push("Digite seu nome");
         }
-        if (inpSurname.value.length < 1) {
+        if (inpSurname.value.length >= 100 || inpSurname.value.length <= 2) {
             errorList.push("Digite seu sobrenome");
         }
-        if (inpUser.value.length < 4) {
-            errorList.push("Digite um nome de usuário com no mínimo 4 caracteres");
+        if (inpUser.value.length >= 15 || inpUser.value.length <= 10) {
+            errorList.push("Seu nome de usuário deve ter entre 10 e 15 caracteres");
         }
-        if (inpPass.value.length < 1) {
-            errorList.push("Digite sua senha");
+        if (inpPass.value.length >= 100 || inpPass.value.length <= 8) {
+            errorList.push("Sua senha deve ter no minimo 8 caracteres");
         }
-        if (inpDate.value.length < 5) {
-            errorList.push("Insira sua data de nascimento");
+        if (inpDate.valueAsDate != null) {
+            yearBirth = inpDate.valueAsDate.getFullYear();
+            currAge = (new Date().getFullYear()) - yearBirth
+            if (currAge >= 120 || currAge <= 16) {
+                errorList.push("Você deve ter mais de 16 anos");
+            }
+        } else {
+            errorList.push("Insira uma data de nascimento válida")
         }
+
+
 
 
         // display errors or submit
@@ -63,9 +72,8 @@ window.addEventListener("load", () => {
                 element.style.margin = "0.3rem"
                 element.style.listStyleType = "none"
             });
-        }
-        else {
-            registerForm.submit()
+        } else {
+            //registerForm.submit()
         }
 
 
